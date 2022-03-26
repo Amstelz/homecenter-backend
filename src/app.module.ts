@@ -6,7 +6,7 @@ import { StatusModule } from './Status/status.module';
 import { ScoreModule } from './Score/score.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost:27017/homecenter'), StatusModule, ScoreModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://backend:VQfKYfFePGMdMSdd@cluster0.39z7o.mongodb.net/homecenter'), StatusModule, ScoreModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -10,7 +10,7 @@ export class ScoreService {
   constructor(@InjectModel(Score.name) private scoreModel: Model<ScoreDocument>) {}
 
   async update(createScoreDto: CreateScoreDto) {
-    const userid = new ObjectId("623f326faa416d1c293bac40");
+    const userid = new ObjectId("623f66b10199b92e29550da8");
     const score = await this.scoreModel.findOne({id: userid });
     score.Score = createScoreDto.Score;
     var Mention = ["Good","Great","Perfect","Impressive","Excellent","Incredible","Champion","Beautiful","Gorgeous","Wonderful","Awesome"];
