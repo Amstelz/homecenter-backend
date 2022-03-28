@@ -11,6 +11,8 @@ export class Status {
   isStopping: number;
   @Prop()
   SongName:string;
+  @Prop()
+  isFinished: number;
 }
 
 export const StatusSchema = SchemaFactory.createForClass(Status);
