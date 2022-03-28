@@ -16,12 +16,17 @@ export class StatusController {
     return this.statusService.update_songname(createStatusDto);
   }
 
-  @Post("playing")
-  update_playing()  {
-    return this.statusService.update_playing();
+  @Post("play")
+  play()  {
+    return this.statusService.play();
   }
 
-  @Post("stopping")
+  @Post("pause")
+  pause()  {
+    return this.statusService.pause();
+  }
+
+  @Post("stop")
   update_stopping()  {
     return this.statusService.update_stopping();
   }

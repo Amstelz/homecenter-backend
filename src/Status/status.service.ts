@@ -17,10 +17,18 @@ export class StatusService {
     return status.save();
   }
 
-  async update_playing() {
+  async play() {
     const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
     const status = await this.statusModel.findOne({id: userid });
-    status.isPlaying = ~(status.isPlaying - 2);
+    status.isPlaying = 1;
+    
+    return status.save();
+  }
+
+  async pause() {
+    const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
+    const status = await this.statusModel.findOne({id: userid });
+    status.isPlaying = 0;
     
     return status.save();
   }
