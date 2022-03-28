@@ -21,6 +21,7 @@ export class StatusService {
     const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
     const status = await this.statusModel.findOne({id: userid });
     status.isPlaying = 1;
+    status.isFinished = 0;
     
     return status.save();
   }
@@ -29,6 +30,7 @@ export class StatusService {
     const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
     const status = await this.statusModel.findOne({id: userid });
     status.isPlaying = 0;
+    status.isFinished = 0;
     
     return status.save();
   }
@@ -37,6 +39,7 @@ export class StatusService {
     const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
     const status = await this.statusModel.findOne({id: userid });
     status.isStopping = ~(status.isStopping - 2);
+    status.isFinished = 0;
     
     return status.save();
   }
