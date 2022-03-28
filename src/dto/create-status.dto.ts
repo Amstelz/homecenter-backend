@@ -9,6 +9,8 @@ export class CreateStatusDto {
 
     isStopping:number;
 
+    isFinished:number;
+
     SongName:string;
   
   }
