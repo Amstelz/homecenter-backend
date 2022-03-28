@@ -31,4 +31,9 @@ export class StatusController {
     return this.statusService.update_stopping();
   }
 
+  @Post("finish")
+  finish(@Body() createStatusDto: CreateStatusDto)  {
+    return this.statusService.finish(createStatusDto);
+  }
+
 }

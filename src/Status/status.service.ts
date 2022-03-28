@@ -41,7 +41,16 @@ export class StatusService {
     return status.save();
   }
 
+  async finish(createStatusDto: CreateStatusDto) {
+    const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
+    const status = await this.statusModel.findOne({id: userid });
+    status.isStopping = createStatusDto.isFinished;
+    
+    return status.save();
+  }
+
   async findAll(): Promise<Status[]> {
     return this.statusModel.find().exec();
   }
+
 }
