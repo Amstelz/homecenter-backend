@@ -47,7 +47,7 @@ export class StatusService {
   async finish(createStatusDto: CreateStatusDto) {
     const userid = new ObjectId("623f196b74a7ab2e5d25b2ea");
     const status = await this.statusModel.findOne({id: userid });
-    status.isStopping = createStatusDto.isFinished;
+    status.isFinished = createStatusDto.isFinished;
     
     return status.save();
   }
