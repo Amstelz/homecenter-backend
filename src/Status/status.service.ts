@@ -12,6 +12,7 @@ export class StatusService {
   async update_songname(createStatusDto: CreateStatusDto) {
     const userid = new ObjectId("623f667e0199b92e29550da5");
     const status = await this.statusModel.findOne({id: userid });
+    status.isStopping = 0;
     status.isPlaying = 1;
     status.SongName = createStatusDto.SongName;
     status.isFinished = 0;
